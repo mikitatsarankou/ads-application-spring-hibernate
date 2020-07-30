@@ -1,0 +1,28 @@
+<Configuration>
+    <Filter type="ThresholdFilter" level="trace" />
+
+    <Appenders>
+        <Console name="STDOUT">
+            <PatternLayout pattern="%p [%d] %m%n" />
+        </Console>
+        <RollingFile name="rollingFile"
+                     fileName="log4j2.log"
+                     filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <Pattern>%c{1.} %p [%d] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval = "5" />
+                <SizeBasedTriggeringPolicy
+                        size="1 MB" />
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="STDOUT" />
+            <AppenderRef ref="rollingFile" />
+        </Root>
+    </Loggers>
+</Configuration>
