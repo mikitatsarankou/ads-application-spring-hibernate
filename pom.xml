@@ -30,7 +30,7 @@
         <javax-annotation-api.version>1.3.2</javax-annotation-api.version>
         <javax.servlet-api.version>4.0.0</javax.servlet-api.version>
 
-        <mysql-connector-java.version>8.0.19</mysql-connector-java.version>
+        <mysql-connector-java.version>8.0.28</mysql-connector-java.version>
 
         <modelmapper.version>2.3.0</modelmapper.version>
 
